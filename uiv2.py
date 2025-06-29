@@ -781,9 +781,9 @@ class TradingBotUI:
     def save_best_model(self):
         if self.historical_best_bot:
             self.historical_best_bot.save_model("./best_trading_model.pth")
-            self.update_stats("✅ Saved best model to 'best_trading_model.pth'")
+            self.update_stats("Saved best model to 'best_trading_model.pth'")
         else:
-            self.update_stats("⚠️ No historical best bot to save.")
+            self.update_stats("No historical best bot to save.")
 
     def load_saved_model(self):
         bot = PyTorchTradingBot(
@@ -793,9 +793,9 @@ class TradingBotUI:
         if bot.load_model("./best_trading_model.pth"):
             self.historical_best_bot = bot
             self.historical_best_fitness = 0.0  # Unknown fitness
-            self.update_stats("✅ Loaded model as current best bot.")
+            self.update_stats("Loaded model as current best bot.")
         else:
-            self.update_stats("⚠️ Failed to load saved model.")
+            self.update_stats("Failed to load saved model.")
 
 
     def setup_plots(self, parent):
